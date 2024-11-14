@@ -33,16 +33,29 @@ Welcome to the World Robot Olympiad (WRO) Bot project repository! This bot is de
 
 ## 🎉 Introduction
 
-The WRO Bot Project aims to create a fully functional robot for the World Robot Olympiad competition. Using a combination of Raspberry Pi for processing, LEGO Technic components for assembly, and various sensors for navigation and interaction, this bot is designed to achieve high performance and adaptability in the competition environment.
+The **WRO Bot Project** is dedicated to building a highly capable, autonomous robot designed to excel in the **World Robot Olympiad (WRO) 2024 Future Engineers** category. With the theme of **smart and sustainable mobility**, this bot will perform intricate tasks under a range of challenging conditions. We are using advanced robotics principles, a robust **Raspberry Pi** processing system, modular **LEGO Technic** components for easy and adaptable assembly, and a suite of sensors to help the robot navigate and interact with the environment. Our goal is to create a bot that demonstrates **precision, efficiency, and adaptability** across various mission scenarios.
 
 ---
 
 ## 🎯 Project Objective
 
-The objective of this project is to:
-1. **Build** a robust robot capable of performing specific tasks in the WRO competition.
-2. **Utilize** modular and reusable parts for easy assembly and disassembly.
-3. **Implement** code to control the robot’s movement, sensor data processing, and task handling.
+This project aims to create a competitive and reliable robot that can autonomously execute tasks in a time-sensitive, dynamic environment as outlined in the **WRO Future Engineers** competition. Key objectives include:
+
+1. **Build a High-Performance Robot**  
+   Design a robust robot that can withstand intensive tasks in WRO’s mission-based rounds, focusing on modularity to adapt to different configurations and scenarios. The bot should be capable of precise movement and efficient task execution, including object manipulation, autonomous pathfinding, and obstacle navigation.
+
+2. **Utilize Modular and Reusable Parts**  
+   By incorporating LEGO Technic components and custom 3D-printed mounts, the bot’s structure is both modular and reusable, allowing for quick reconfiguration and minimal downtime. This modularity enables easy assembly, repair, and adaptations as needed, ensuring optimal performance across different WRO rounds and mission variations.
+
+3. **Implement Advanced Control Code**  
+   Develop sophisticated algorithms and control code to manage sensor data interpretation, path planning, and task handling. The code is designed to enable the robot to make autonomous decisions in real-time, adapting to obstacles, detecting objects, and completing missions according to WRO specifications. This includes efficient data handling from ultrasonic, infrared, and camera sensors to ensure smooth and precise task completion under varying conditions.
+
+4. **Optimize for Future Engineers Rounds**  
+   Prepare the robot specifically for the missions of the Future Engineers category, which often requires complex maneuvers like object sorting, transport, alignment, and advanced navigation. The bot should be prepared to handle tasks that may change each round, ensuring a flexible yet powerful framework for meeting each mission’s demands.
+
+---
+
+This setup will help **Team MAYERDOA_ROBOTICS** achieve excellence in WRO’s challenging rounds, bringing together innovative robotics principles and real-world engineering solutions.
 
 ---
 
