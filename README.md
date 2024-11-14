@@ -2,102 +2,147 @@
   <img src="https://github.com/user-attachments/assets/172c3a2a-33b5-4c01-a7e5-fbb2edcce263" alt="Mayerdoa Robotics Logo" width="200" />
 </div>
 
-# SMOKI: Autonomous Vehicle by Team MAYERDOA_ROBOTICS
+# 🤖 WRO Bot Project
 
-This repository contains the engineering documentation for **SMOKI**, an autonomous vehicle developed by **Team MAYERDOA_ROBOTICS** for the **2024 WRO National Final (Future Engineers)** representing **Bangladesh**.
+Welcome to the World Robot Olympiad (WRO) Bot project repository! This bot is designed to perform efficiently in the WRO competition, leveraging a combination of LEGO Technic parts, a Raspberry Pi, various sensors, and custom components. This document provides an overview of the bot’s assembly, functionality, and usage instructions.
 
-## Team Members
+---
+
+## 📜 Table of Contents
+- [Introduction](#introduction)
+- [Project Objective](#project-objective)
+- [Team Members](#team-members)
+- [Features](#features)
+- [Hardware Components](#hardware-components)
+- [Assembly Instructions](#assembly-instructions)
+  - [Chassis Structure](#chassis-structure)
+  - [Drive System](#drive-system)
+  - [Electronics and Power System](#electronics-and-power-system)
+  - [Sensors](#sensors)
+  - [Mounting the Raspberry Pi and Camera](#mounting-the-raspberry-pi-and-camera)
+- [Software Setup](#software-setup)
+- [Code Overview](#code-overview)
+- [Usage](#usage)
+- [Troubleshooting](#troubleshooting)
+- [Gallery](#gallery)
+- [Future Improvements](#future-improvements)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
+---
+
+## 🎉 Introduction
+
+The WRO Bot Project aims to create a fully functional robot for the World Robot Olympiad competition. Using a combination of Raspberry Pi for processing, LEGO Technic components for assembly, and various sensors for navigation and interaction, this bot is designed to achieve high performance and adaptability in the competition environment.
+
+---
+
+## 🎯 Project Objective
+
+The objective of this project is to:
+1. **Build** a robust robot capable of performing specific tasks in the WRO competition.
+2. **Utilize** modular and reusable parts for easy assembly and disassembly.
+3. **Implement** code to control the robot’s movement, sensor data processing, and task handling.
+
+---
+
+## 👥 Team Members
 
 - **Anas Bin Azim** – [anas.azim.71@gmail.com](mailto:anas.azim.71@gmail.com)
 - **Rakibul Islam** – [rakibul.rir06@gmail.com](mailto:rakibul.rir06@gmail.com)
 - **Mohiuddin Sami** – [sm.mohiuddin.sami@gmail.com](mailto:sm.mohiuddin.sami@gmail.com)
 
-## Repository Overview
+**Team**: **MAYERDOA_ROBOTICS**  
+**Country**: **Bangladesh**  
+**Event**: **2024 WRO National Final (Future Engineers)**
 
-- `models` – 3D printable files utilized in our robot.
-- `getting started` – Guide to initiating the project.
-- `src` – Main codebase for the robot.
-- `video` – Link to a YouTube video showcasing our robot in action.
-- `t-photos` – Team photographs (serious and candid).
-- `v-photos` – Images of the robot from various angles.
-- `others` – Additional essential photographs.
+---
 
-## Mechanical Design
+## 🚀 Features
 
-### Mechanical Parts List
+- **LEGO Technic-based Chassis**: Modular, durable, and easy to assemble.
+- **Raspberry Pi Controller**: Provides processing power for sensor integration and control logic.
+- **Sensor Array**: Ultrasonic, infrared, and other sensors for obstacle detection, line tracking, and environmental interaction.
+- **Custom 3D-Printed Mounts**: Holds components securely in place.
+- **Efficient Power System**: Ensures smooth and sustained operation during tasks.
 
-- M3 Nut 3mm – 10 pcs
-- M3 15mm Screw – 12 pcs
-- M2 Nut – 10 pcs
-- 35.5mm Red Female-to-Female Round Spacer – 4 pcs
-- 30mm Male-to-Female Hex Spacer – 4 pcs
-- 15mm Male-to-Female Hex Spacer – 3 pcs
-- Bearings
+---
 
-### Robot's Chassis
+## 🧩 Hardware Components
 
-The **SMOKI** chassis is meticulously designed to balance functionality with aesthetics, incorporating:
+- **Raspberry Pi 4**: The brain of the bot, handling computations and sensor data.
+- **LEGO Technic Parts**: For the primary structure and chassis of the bot.
+- **Ultrasonic Sensors**: Used for distance measurement and obstacle detection.
+- **Infrared Sensors**: Helps in line tracking and navigation.
+- **DC Motors**: Provides propulsion to drive the wheels.
+- **3D Printed Parts**: Custom mounts and holders for precise component placement.
+- **Power Supply**: Batteries and regulators to power all components.
 
-- **Ackermann Steering System**: Ensures precise turns, reducing tire scrubbing and enhancing maneuverability by aligning the wheels to follow appropriate turning radii.
-- **Bevel Gear Mechanism**: Efficiently manages torque and speed, providing precise control over movement with a compact and durable structure.
-- **3D Printed Body**: Offers a sleek, customizable design, optimizing weight distribution and structural integrity through advanced 3D printing techniques.
-- **Sonar Mounts**: Strategically positioned to maximize sensor performance, enhancing obstacle detection while seamlessly integrating into the chassis design.
+---
 
-## Electrical Design
+## 🔧 Assembly Instructions
 
-### Electronics Parts List
+### 🏗️ Chassis Structure
 
-- 25GA 800 RPM Motor
-- Raspberry Pi 5 (8GB)
-- SJCAM C200 Action Camera
-- Arduino Nano
-- Copper Plate
-- MG90S Servo – 1 pcs
-- Li-Ion Battery – 2 pcs
-- Ultrasonic Sensor – 4 pcs
-- 10A Buck Module
-- MT3608 Booster Module
-- L298N Motor Driver
-- Push Button
-- Buzzer
+The bot's main frame is built using LEGO Technic parts, providing a sturdy base for mounting all other components.
 
-### Power Delivery and Optimization
+![Chassis Assembly](./images/01_chassis_structure.jpg)
 
-Efficient power management is crucial for the robot's performance. We employed voltage conversion techniques to meet diverse power requirements:
+*Additional Photos*:
+- ![Chassis Detail](./images/02_chassis_detail.jpg)
+- ![Frame Assembly](./images/03_frame_assembly.jpg)
 
-- **LM4016 Buck Converter**: Steps down battery voltage from 8.4V to 5V, providing a stable supply for the Raspberry Pi 5, which demands 5-6A at peak performance.
-- **MT3608 Boost Converter**: Steps up voltage to 14V, ensuring motors receive adequate current for smooth and responsive operation under varying loads.
+### 🚗 Drive System
 
-### Raspberry Pi and Camera Integration
+The drive system consists of DC motors connected to the wheels, providing the necessary propulsion and control for movement.
 
-The **Raspberry Pi 5** powers the **SJCAM C200 Action Camera**, integral for navigation and obstacle detection. The optimized power delivery system ensures stable operation of the camera and other critical components.
+![Drive System](./images/04_drive_system.jpg)
 
-## Integration of LEGO MINDSTORMS EV3 Expansion Set (45560)
+*Additional Photos*:
+- ![Motor Detail](./images/05_motor_detail.jpg)
+- ![Wheel Assembly](./images/06_wheel_assembly.jpg)
 
-To enhance the structural and functional capabilities of **SMOKI**, we integrated components from the **LEGO MINDSTORMS EV3 Expansion Set (45560)**. This set offers a wide range of supplementary elements, including unique structural pieces and mechanical components, facilitating advanced building and programming opportunities. The inclusion of these elements allowed us to:
+### ⚡ Electronics and Power System
 
-- **Enhance Structural Integrity**: Utilize specialized beams and connectors to reinforce the chassis.
-- **Improve Mechanical Functionality**: Incorporate gears and axles to refine movement mechanisms.
-- **Streamline Sensor Integration**: Employ mounting elements for precise sensor placement.
+- **Power Module**: Supplies consistent power to the Raspberry Pi and motors.
+- **Wiring**: Organized to ensure reliable connectivity and reduce interference.
 
-**Why Use LEGO MINDSTORMS EV3 Expansion Set (45560)?**
+![Electronics Setup](./images/07_electronics_setup.jpg)
 
-The decision to incorporate the LEGO MINDSTORMS EV3 Expansion Set was driven by its versatility and compatibility with our design objectives. The set provides:
+*Additional Photos*:
+- ![Power Supply](./images/08_power_supply.jpg)
+- ![Battery Connection](./images/09_battery_connection.jpg)
 
-- **Diverse Components**: A variety of parts that support complex mechanical designs.
-- **Ease of Assembly**: Modular pieces that facilitate quick prototyping and adjustments.
-- **Educational Value**: Components designed for educational purposes, aligning with the WRO's emphasis on learning and innovation.
+### 🔍 Sensors
 
-**Purchasing and Setup**
+Various sensors are strategically placed to provide the bot with spatial awareness, enabling obstacle avoidance, line tracking, and environmental data collection.
 
-- **Purchase Link**: [LEGO MINDSTORMS EV3 Expansion Set (45560)](https://education.lego.com/en-us/product-resources/mindstorms-ev3/downloads/building-instructions/)
-- **Building Instructions**: Detailed manuals are available on the [LEGO Education website](https://education.lego.com/en-us/product-resources/mindstorms-ev3/downloads/building-instructions/), providing step-by-step guidance for assembling various models.
+![Sensors Array](./images/10_sensors_array.jpg)
 
-## Conclusion
+*Additional Photos*:
+- ![Ultrasonic Sensor Placement](./images/11_ultrasonic_sensor.jpg)
+- ![Infrared Sensor Setup](./images/12_infrared_sensor.jpg)
 
-The integration of the LEGO MINDSTORMS EV3 Expansion Set (45560) into **SMOKI** exemplifies our commitment to leveraging high-quality, versatile components to enhance our robot's capabilities. This strategic choice aligns with the WRO's objectives of fostering innovation and education in robotics.
+### 📸 Mounting the Raspberry Pi and Camera
 
-For more information on the LEGO MINDSTORMS EV3 Expansion Set, visit the [LEGO Education website](https://education.lego.com/en-us/product-resources/mindstorms-ev3/downloads/building-instructions/).
+The Raspberry Pi is securely mounted on the bot using custom 3D-printed parts, which also provide ventilation. The camera is positioned for optimal visibility and angle.
+
+![Raspberry Pi and Camera Mount](./images/13_raspberry_camera.jpg)
+
+*Additional Photos*:
+- ![Camera Detail](./images/14_camera_detail.jpg)
+- ![Processor Mount](./images/15_processor_mount.jpg)
+
+---
+
+## 💻 Software Setup
+
+1. **Install Dependencies**:
+   ```bash
+   sudo apt update
+   sudo apt install python3 python3-pip
+   pip3 install -r requirements.txt
+
 
 
 
