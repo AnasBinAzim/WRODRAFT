@@ -233,17 +233,10 @@ The following images showcase the detailed assembly process of our WRO Bot's cha
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Framed Images</title>
-  <style>
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-  </style>
 </head>
 <body>
-  <table>
+  <table style = "width:100%; border-collapse:collapse">
+    <caption><strong>Framed Images</strong></caption>
     <tr>
       <td><img src="https://github.com/user-attachments/assets/0994a988-1f73-43db-b7f9-34c5243a842a" alt="Image 1"></td>
       <td><img src="https://github.com/user-attachments/assets/39b389db-0038-425f-bcd5-740f748e3cc9" alt="Image 2"></td>
@@ -267,8 +260,6 @@ The following images showcase the detailed assembly process of our WRO Bot's cha
 ### 🚗 Drive System
 
 The drive system includes DC motors, which provide reliable propulsion and control.
-
-https://github.com/user-attachments/assets/59de14fc-f248-4ac2-8b31-80baea148cff
 
 
 <p align="center">
@@ -375,6 +366,16 @@ A **differential gearbox** allows the wheels on the same axle to rotate at diffe
 
 ---
 
+#### **Comparison: Bevel Gear vs. Differential Gearbox**
+
+| **Feature**                | **Bevel Gear**                            | **Differential Gearbox**                |
+|----------------------------|-------------------------------------------|-----------------------------------------|
+| **Turning Efficiency**     | Limited; fixed wheel speeds.             | Superior; wheels rotate independently. |
+| **Energy Usage**           | Higher due to slippage during turns.     | Lower; optimized for dynamic turns.    |
+| **Durability**             | Higher strain on components.             | Reduced strain; longer component life. |
+
+---
+
 ### **Servo Motor with L293D Motor Driver**
 
 <table>
@@ -386,7 +387,7 @@ A **differential gearbox** allows the wheels on the same axle to rotate at diffe
 </td>
 <td width="70%">
 
-We used the **L293D Motor Driver** in combination with a **Servo Motor** to control the robot's wheels effectively. The L293D is a dual H-Bridge motor driver that is perfectly suited for the LEGO motor, which operates at **750mA** current.
+We used the **L293D Motor Driver** in combination with a **Servo Motor** to control the robot's wheels effectively. We are using **L293D Motor Driver** to control the rear axle motor. The L293D is a dual H-Bridge motor driver that is perfectly suited for the LEGO motor, which operates at **750mA** current.
 
 ##### **Why L293D?**
 - **Optimal Current Capacity**: Can handle up to **1A** peak current, suitable for the LEGO motor’s 750mA requirement.
@@ -402,16 +403,6 @@ We used the **L293D Motor Driver** in combination with a **Servo Motor** to cont
 </td>
 </tr>
 </table>
-
----
-
-#### **Comparison: Bevel Gear vs. Differential Gearbox**
-
-| **Feature**                | **Bevel Gear**                            | **Differential Gearbox**                |
-|----------------------------|-------------------------------------------|-----------------------------------------|
-| **Turning Efficiency**     | Limited; fixed wheel speeds.             | Superior; wheels rotate independently. |
-| **Energy Usage**           | Higher due to slippage during turns.     | Lower; optimized for dynamic turns.    |
-| **Durability**             | Higher strain on components.             | Reduced strain; longer component life. |
 
 ---
 
@@ -457,7 +448,7 @@ The LEGO Steering System uses modular LEGO Technic parts with a simple rack-and-
 
 ### **Conclusion**
 
-The upgrades to our robot’s mobility system—switching from bevel gears to a differential gearbox, integrating the L293D with a servo motor, and transitioning from Ackermann Steering to LEGO Steering—significantly enhanced its performance. These changes provided:
+The upgrades to our robot’s mobility system—switching from bevel gears to a differential gearbox, integrating the L293D with a servo motor, and transitioning from  a 3D printed steering mechanism to a steering mechanism using LEGO parts—significantly enhanced its performance. These changes provided:
 1. **Smoother Turns**: Differential gearbox enabled independent wheel speeds, reducing slippage.
 2. **Precise Control**: The L293D motor driver ensured smooth speed and direction management.
 3. **Simpler Design**: LEGO Steering’s modularity allowed for easier integration and maintenance.
@@ -475,6 +466,18 @@ Together, these upgrades ensured that our robot was optimized for the challenges
 The **Power and Sense Management** system of our robot has been meticulously designed to optimize performance while ensuring reliable power delivery, precise sensing, and efficient communication between components.
 
 ---
+## 🔋 Power Distribution
+
+Our robot's power system has been engineered for stability and efficiency, addressing all unique voltage and current requirements:
+1. **🔋 Two Lithium-Ion Cells**: Each rated at **4.2V**, providing a total of **8.4V**.
+2. **⚙️ XL4016 Buck Converter**: Steps down **8.4V** to a stable **5V** for powering the Raspberry Pi 5 and other components.
+3. **🔌 Buck Modules**:
+   - One module supplies **6V** for the servo motor.
+   - Another module provides **5V** for the ESP32 microcontroller.
+4. **⚡ 12V Power for Motors**: Delivered using a **Buck-Boost Converter** to ensure consistent motor performance.
+
+---
+
 
 ## 🎥 Camera Placement and Functionality
 
@@ -502,20 +505,12 @@ After analyzing performance during testing, we made significant improvements:
 
 ### 🚀 Current Design
 The new configuration leverages **HC-SR04 sonar sensors**, chosen for their **wide availability** and **affordable price**. The updated design provides:
-- **360° Coverage**: Vertical mounting eliminates blind spots.
+- **High Coverage**: Vertical mounting eliminates blind spots.
 - **Early Detection**: Enhanced obstacle sensing allows for quicker decision-making.
+- **Really Cheap**: You can buy 300 of these instead of a Lider Sensor.
 
 ---
 
-## 🔋 Power Management
-
-Our robot's power system has been engineered for stability and efficiency, addressing all unique voltage and current requirements:
-1. **🔋 Two Lithium-Ion Cells**: Each rated at **4.2V**, providing a total of **8.4V**.
-2. **⚙️ XL4016 Buck Converter**: Steps down **8.4V** to a stable **5V** for powering the Raspberry Pi 5 and other components.
-3. **🔌 Buck Modules**:
-   - One module supplies **6V** for the servo motor.
-   - Another module provides **5V** for the ESP32 microcontroller.
-4. **⚡ 12V Power for Motors**: Delivered using a **Buck-Boost Converter** to ensure consistent motor performance.
 
 >[!IMPORTANT]
 > **Power Highlights:**
