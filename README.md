@@ -662,12 +662,12 @@ flowchart TD
     A[Start] --> B[Capture Image]
     B --> C[Convert to HSV]
     C --> D[Segment Blue and Orange Portions]
-    D --> E{Blue Before Orange?}
+    D --> H[Apply Hough Line Transform]
+    H --> E{Blue Before Orange?}
     E -->|Yes| F[Set Right-Based Orientation]
     E -->|No| G[Set Left-Based Orientation]
-    F --> H[Apply Hough Line Transform]
-    G --> H
-    H --> I[Count Detected Lines]
+    F --> I[Count Detected Lines]
+    G --> I
     I --> J{Lines Counted >= 12?}
     J -->|No| K[Calculate Error]
     K --> L[PID Controller Adjusts Steering]
@@ -676,6 +676,7 @@ flowchart TD
     J -->|Yes| N[Delay and Stop]
     N --> O[End]
 ```
+
 
 ---
 ---
