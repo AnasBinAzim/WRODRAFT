@@ -586,38 +586,22 @@ In **Round 1**, our robot **SMOKI** must autonomously complete **three laps** on
 
 ---
 
-### 📖 Detailed Explanation
+## 📖 Detailed Explanation
 
-#### 1. 📸 Image Acquisition and Preprocessing
+### 1. 📸 Image Acquisition and Preprocessing
+- **Camera Input**: High-resolution images are captured at regular intervals to ensure up-to-date visual data.
+- **HSV Conversion**: Conversion to HSV allows for more effective color thresholding. HSV separates image intensity (Value) from color information (Hue and Saturation), making it easier to detect specific colors under varying lighting conditions.
 
-- **Camera Input**:
-  - High-resolution images are captured at regular intervals to ensure up-to-date visual data.
-- **HSV Conversion**:
-  - Conversion to HSV allows for more effective color thresholding.
-  - HSV separates image intensity (Value) from color information (Hue and Saturation), making it easier to detect specific colors under varying lighting conditions.
+### 2. 🎨 Color Segmentation
+- **HSV Thresholding**: 
+  - **Blue Line Detection**: Pixels within the blue HSV range are extracted.
+  - **Orange Line Detection**: Pixels within the orange HSV range are extracted.
+- **Orientation Check**: By analyzing the sequence of color segments (blue vs. orange), the robot determines its starting orientation. This prevents incorrect lap counting due to starting in the wrong direction.
 
-#### 2. 🎨 Color Segmentation
-
-- **HSV Thresholding**:
-  - Specific HSV ranges for blue and orange are defined based on calibration.
-  - **Blue Line Detection**:
-    - Pixels within the blue HSV range are extracted.
-  - **Orange Line Detection**:
-    - Pixels within the orange HSV range are extracted.
-- **Orientation Check**:
-  - By analyzing the sequence of color segments (blue vs. orange), the robot determines its starting orientation.
-  - This prevents incorrect lap counting due to starting in the wrong direction.
-
-#### 3. 📏 Line Detection with Hough Transform
-
-- **Edge Detection**:
-  - Preprocessing steps like Gaussian blur and Canny edge detection are applied to enhance line features.
-- **Hough Line Transform**:
-  - Detects straight lines by transforming points in image space to a parameter space.
-  - Lines are identified based on the accumulation of intersecting points in the parameter space.
-- **Lap Counting Logic**:
-  - Each detected line crossing increments a counter.
-  - The robot recognizes lap completion after counting **12** line crossings, accounting for both blue and orange lines over three laps.
+### 3. 📏 Line Detection with Hough Transform
+- **Edge Detection**: Preprocessing steps like Gaussian blur and Canny edge detection are applied to enhance line features.
+- **Hough Line Transform**: Detects straight lines by transforming points in image space to a parameter space. Lines are identified based on the accumulation of intersecting points in the parameter space.
+- **Lap Counting Logic**: Each detected line crossing increments a counter. The robot recognizes lap completion after counting **12** line crossings, accounting for both blue and orange lines over three laps.
 
 <div align="center">
   <!-- Placeholder for Hough Line Transform Image -->
@@ -632,28 +616,19 @@ For a comprehensive understanding of the Hough Line Transform method, you can wa
 
 - [🔗 Hough Line Transform Tutorial by DigitalSreeni](https://www.youtube.com/watch?v=5zAT6yTHvP0&ab_channel=DigitalSreeni)
 
-#### 4. ⚙️ PID Control for Position Correction
-
-- **Sensor Input**:
-  - Distance sensors on both sides provide real-time measurements of the robot's position relative to the track edges.
-- **Error Calculation**:
-  - The error signal is the difference between the left and right distance measurements.
-- **PID Controller**:
+### 4. ⚙️ PID Control for Position Correction
+- **Sensor Input**: Distance sensors on both sides provide real-time measurements of the robot's position relative to the track edges.
+- **Error Calculation**: The error signal is the difference between the left and right distance measurements, ensuring the robot stays in the middle of the track by minimizing this difference to zero.
+- **PID Controller**: 
   - **Proportional Term (P)**: Reacts to the current error.
   - **Integral Term (I)**: Accounts for past errors to eliminate steady-state offset.
   - **Derivative Term (D)**: Predicts future error based on the rate of change.
-- **Steering Adjustment**:
-  - The PID output adjusts the steering angle to minimize the error.
-  - Ensures the robot maintains the desired **25 cm** distance from the designated side.
+- **Steering Adjustment**: The PID output adjusts the steering angle to minimize the error. This ensures the robot maintains the desired position centered between the track edges.
 - **Orientation-Based Behavior**:
-  - **Right-Based Orientation**:
-    - The robot favors the right side of the track.
-  - **Left-Based Orientation**:
-    - The robot favors the left side of the track.
+  - **Right-Based Orientation**: The robot favors the right side of the track.
+  - **Left-Based Orientation**: The robot favors the left side of the track.
 
----
-
-### 📊 Flowchart of the Algorithm
+## 📦 Project Structure
 
 ## 📊 Flowchart of the Algorithm
 
